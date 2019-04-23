@@ -12,24 +12,6 @@ find_package(catkin REQUIRED
     trajectory_msgs
     transmission_interface)
 
-###################################
-## catkin specific configuration ##
-###################################
-catkin_package(
-  CATKIN_DEPENDS
-    diagnostic_updater
-    khi_robot_msgs
-    trajectory_msgs)
-
-###########
-## Build ##
-###########
-
-include_directories(
-  include
-  ${catkin_INCLUDE_DIRS}
-)
-
 ## KRNX
 ## TODO: external library path
 if( ${CMAKE_SYSTEM_PROCESSOR} MATCHES ".*x86_64.*" )
@@ -49,6 +31,26 @@ endif()
 
 find_library(krnx_LIBRARIES lib${krnx_lib_name}.so PATHS ${PROJECT_SOURCE_DIR}/lib)
 message(STATUS "Found KRNX library at: ${krnx_LIBRARIES}")
+
+###################################
+## catkin specific configuration ##
+###################################
+catkin_package(
+  LIBRARIES khi_robot_client ${krnx_LIBRARIES}
+  INCLUDE_DIRS include
+  CATKIN_DEPENDS
+    diagnostic_updater
+    khi_robot_msgs
+    trajectory_msgs)
+
+###########
+## Build ##
+###########
+
+include_directories(
+  include
+  ${catkin_INCLUDE_DIRS}
+)
 
 ## Declare a C++ library
 add_library(khi_robot_client src/khi_robot_client.cpp src/khi_robot_krnx_driver.cpp)
