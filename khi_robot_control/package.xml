@@ -3,7 +3,7 @@
   <name>khi_robot_control</name>
   <!-- because bloom-release chokes on mismatched version strings: -->
   <!-- <version>1.1.0</version> -->
-  <version>1.0.0</version>
+  <version>1.1.0</version>
   <description>ROS KHI robot controller package based on ros_control</description>
 
   <author email="nakamichi_d@khi.co.jp">nakamichi_d</author>

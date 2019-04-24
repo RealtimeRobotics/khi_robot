@@ -3,7 +3,7 @@
   <name>khi_robot_msgs</name>
   <!-- because bloom-release chokes on mismatched version strings: -->
   <!-- <version>1.1.0</version> -->
-  <version>1.0.0</version>
+  <version>1.1.0</version>
   <description>This package contains KHI ROS robot msgs</description>
 
   <author email="nakamichi_d@khi.co.jp">nakamichi_d</author>
