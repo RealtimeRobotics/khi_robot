@@ -88,5 +88,13 @@ install(
     include/khi_robot_hardware_interface.h
     include/khi_robot_krnx_driver.h
     include/krnx.h
-  DESTINATION ${CATKIN_PACKAGE_INCLUDE_DESTINATION}
+
+  # > CATKIN_GLOBAL_INCLUDE_DESTINATION This is set to include. This
+  # > destination should only be used when installing headers which are not in
+  # > a subfolder which matches the project name. Else you should use the
+  # > destination CATKIN_PACKAGE_INCLUDE_DESTINATION instead.
+  #
+  # https://docs.ros.org/kinetic/api/catkin/html/user_guide/variables.html#CATKIN_GLOBAL_INCLUDE_DESTINATION
+  DESTINATION
+    ${CATKIN_GLOBAL_INCLUDE_DESTINATION}
 )
