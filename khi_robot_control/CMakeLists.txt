@@ -80,3 +80,13 @@ install(TARGETS main khi_robot_client
   ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
   LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
   RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION})
+
+install(
+  FILES
+    include/khi_robot_client.h
+    include/khi_robot_driver.h
+    include/khi_robot_hardware_interface.h
+    include/khi_robot_krnx_driver.h
+    include/krnx.h
+  DESTINATION ${CATKIN_PACKAGE_INCLUDE_DESTINATION}
+)
